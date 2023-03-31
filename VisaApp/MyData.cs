@@ -6,12 +6,14 @@ namespace VisaApp
 {
     public class MyData
     {
-        
+        public int survey_status { get; set; }
+        public string unique_id { get; set; }
         
         public FullName full_name { get; set; }
         public string second_name { get; set; }
         public int marital_status { get; set; }
         public string birth_date { get; set; }
+        public int sex { get; set; }
         
         public string birth_sity { get; set; }
         public string birth_country { get; set; }
@@ -135,8 +137,8 @@ namespace VisaApp
     
         public class InfoAboutTravel
         {
-            public string visa_char {get;set;}
-            public string visa_type {get;set;}
+            public int visa_char {get;set;}
+            public int visa_type {get;set;}
             public string travel_goal {get;set;}
             public string arrival_date {get;set;}
             public string arrival_city {get;set;}
@@ -147,6 +149,7 @@ namespace VisaApp
             public string hotel_number { get; set; }
             public int payer {get;set;}
             public bool have_group { get; set; }
+            public string group_name { get; set; }
         }
 
         public class StayInUSA
@@ -159,6 +162,7 @@ namespace VisaApp
         {
             public string sitizenship { get; set; }
             public bool second_sitizenship{ get; set; }
+            public string second_sitizen_country { get; set; }
             public bool second_passport_availability{ get; set; }
             public string number_second_passport{ get; set; }
             public bool permanent_resident{ get; set; }
