@@ -127,7 +127,14 @@ namespace VisaApp
                 {btnStartAll,0},
                 {btnPersonalTwo,1},
                 {btnTravelInfornation,2},
-                {btnCompanions,3}
+                {btnCompanions,3},
+                {btnPrevious,4},
+                {btnAdressAndPhone,5},
+                {btnPassportInformation,6},
+                {btnUSContact,7},
+                {btnFamilyInformation,8},
+                {btnSpose,9},
+                {btnWork,10}
             };
             foreach (var button in buttons)
             {
@@ -159,8 +166,97 @@ namespace VisaApp
             selenium.TravelCompanionsInformation();
             survey.survey_status = 4;
             SaveSurvey();
+            selenium.AddPrevious();
+            survey.survey_status = 5;
+            SaveSurvey();
+            selenium.AddressAndPhone();
+            survey.survey_status = 6;
+            SaveSurvey();
+            selenium.AddPassport();
+            survey.survey_status = 7;
+            SaveSurvey();
+            selenium.USContact();
+            survey.survey_status = 8;
+            SaveSurvey();
+            selenium.Family();
+            survey.survey_status = 9;
+            SaveSurvey();
+            selenium.AddSpouse();
+            survey.survey_status = 10;
+            SaveSurvey();
+            selenium.AdditionalWork();
+            survey.survey_status = 11;
+            SaveSurvey();
+
 
             VisibleButtons();
+        }
+
+        private void btnPrevious_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.NextPage();
+            selenium.NextPage();
+            selenium.NextPage();
+            selenium.NextPage();
+            selenium.AddPrevious();
+            survey.survey_status = 5;
+            SaveSurvey();
+        }
+
+        private void btnAdressAndPhone_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.AddressAndPhone();
+            survey.survey_status = 6;
+            SaveSurvey();
+        }
+
+        private void btnPassportInformation_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.AddPassport();
+            survey.survey_status = 7;
+            SaveSurvey();
+        }
+
+        private void btnUSContact_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.USContact();
+            survey.survey_status = 8;
+            SaveSurvey();
+        }
+
+        private void btnFamilyInformation_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.Family();
+            survey.survey_status = 9;
+            SaveSurvey();
+        }
+
+        private void btnSpose_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.AddSpouse();
+            survey.survey_status = 10;
+            SaveSurvey();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.AdditionalWork();
+            survey.survey_status = 11;
+            SaveSurvey();
         }
     }
 }

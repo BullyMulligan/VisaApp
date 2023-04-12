@@ -22,6 +22,9 @@ namespace VisaApp
         public InfoAboutTravel info_about_travel { get; set; }
         public List<Person> companions { get; set; }
         public bool have_been_to_USA { get; set; }
+        public string date_arrival { get; set; }
+        public string time_arrival { get; set; }
+        public int unit_arrival { get; set; }
         public bool have_driver_doc { get; set; }
         public string driver_doc_number { get; set; }
         public string driver_doc_state { get; set; }
@@ -32,10 +35,14 @@ namespace VisaApp
         public bool same_country { get; set; }
         public bool fingers_prints { get; set; }
         public bool loss_visa { get; set; }
+        public string year_loss_visa { get; set; }
+        public string loss_explain { get; set; }
         public bool cancelled_visa { get; set; }
+        public string cancel_explain { get; set; }
         public bool rejection_visa { get; set; }
         public string rejection_reason { get; set; }
         public bool greencard { get; set; }
+        public string imigration_explain{ get; set; }
         public Address address { get; set; }
         public Address real_address { get; set; }
         public string personal_number { get; set; }
@@ -68,7 +75,7 @@ namespace VisaApp
             public bool have_invite { get; set; }
             public string name { get; set; }
             public string surname { get; set; }
-            public string country { get; set; }
+            public string company_name { get; set; }
             public int relationship { get; set; }
             public Address address { get; set; }
             public string number { get; set; }
@@ -95,6 +102,10 @@ namespace VisaApp
             public string end_date{get;set;}
             public string wages{get;set;}
             public string spec{get;set;}
+            public string title { get; set; }
+            public string supervizor_surname { get; set; }
+            public string supervizor_name { get; set; }
+            public string course { get; set; }
         }
 
         public class Passport
@@ -107,10 +118,13 @@ namespace VisaApp
             public string issuedate{get;set;}
             public string endDate{get;set;}
             public bool isLoss{get;set;}
+            public string loss_passport_number { get;set; }
+            public string loss_passport_country { get;set; }
+            public string loss_passport_explain{ get;set; }
         }
         public class PublicLink
         {
-            public string linl_soc_web{get;set;}
+            public int linl_soc_web{get;set;}
             public string link_to_account{get;set;}
         }
         public class Address
@@ -157,6 +171,7 @@ namespace VisaApp
             public string national_identification_number{get;set;}
             public string social_security_number{get;set;}
             public string taxpayer_number{get;set;}
+            
         }
         public class Sitizenship
         {

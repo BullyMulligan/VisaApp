@@ -36,6 +36,13 @@
             this.btnPersonalTwo = new System.Windows.Forms.Button();
             this.btnTravelInfornation = new System.Windows.Forms.Button();
             this.btnCompanions = new System.Windows.Forms.Button();
+            this.btnPrevious = new System.Windows.Forms.Button();
+            this.btnAdressAndPhone = new System.Windows.Forms.Button();
+            this.btnPassportInformation = new System.Windows.Forms.Button();
+            this.btnUSContact = new System.Windows.Forms.Button();
+            this.btnFamilyInformation = new System.Windows.Forms.Button();
+            this.btnSpose = new System.Windows.Forms.Button();
+            this.btnWork = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoadSurvey
@@ -104,11 +111,88 @@
             this.btnCompanions.UseVisualStyleBackColor = true;
             this.btnCompanions.Click += new System.EventHandler(this.btnCompanions_Click);
             // 
+            // btnPrevious
+            // 
+            this.btnPrevious.Location = new System.Drawing.Point(14, 272);
+            this.btnPrevious.Name = "btnPrevious";
+            this.btnPrevious.Size = new System.Drawing.Size(129, 26);
+            this.btnPrevious.TabIndex = 6;
+            this.btnPrevious.Text = "Previous";
+            this.btnPrevious.UseVisualStyleBackColor = true;
+            this.btnPrevious.Click += new System.EventHandler(this.btnPrevious_Click);
+            // 
+            // btnAdressAndPhone
+            // 
+            this.btnAdressAndPhone.Location = new System.Drawing.Point(14, 314);
+            this.btnAdressAndPhone.Name = "btnAdressAndPhone";
+            this.btnAdressAndPhone.Size = new System.Drawing.Size(129, 26);
+            this.btnAdressAndPhone.TabIndex = 7;
+            this.btnAdressAndPhone.Text = "Address and Phone";
+            this.btnAdressAndPhone.UseVisualStyleBackColor = true;
+            this.btnAdressAndPhone.Click += new System.EventHandler(this.btnAdressAndPhone_Click);
+            // 
+            // btnPassportInformation
+            // 
+            this.btnPassportInformation.Location = new System.Drawing.Point(14, 356);
+            this.btnPassportInformation.Name = "btnPassportInformation";
+            this.btnPassportInformation.Size = new System.Drawing.Size(129, 26);
+            this.btnPassportInformation.TabIndex = 8;
+            this.btnPassportInformation.Text = "Passport Information";
+            this.btnPassportInformation.UseVisualStyleBackColor = true;
+            this.btnPassportInformation.Click += new System.EventHandler(this.btnPassportInformation_Click);
+            // 
+            // btnUSContact
+            // 
+            this.btnUSContact.Location = new System.Drawing.Point(14, 398);
+            this.btnUSContact.Name = "btnUSContact";
+            this.btnUSContact.Size = new System.Drawing.Size(129, 26);
+            this.btnUSContact.TabIndex = 9;
+            this.btnUSContact.Text = "U.S.Contact";
+            this.btnUSContact.UseVisualStyleBackColor = true;
+            this.btnUSContact.Click += new System.EventHandler(this.btnUSContact_Click);
+            // 
+            // btnFamilyInformation
+            // 
+            this.btnFamilyInformation.Location = new System.Drawing.Point(15, 441);
+            this.btnFamilyInformation.Name = "btnFamilyInformation";
+            this.btnFamilyInformation.Size = new System.Drawing.Size(129, 26);
+            this.btnFamilyInformation.TabIndex = 10;
+            this.btnFamilyInformation.Text = "Famly Information";
+            this.btnFamilyInformation.UseVisualStyleBackColor = true;
+            this.btnFamilyInformation.Click += new System.EventHandler(this.btnFamilyInformation_Click);
+            // 
+            // btnSpose
+            // 
+            this.btnSpose.Location = new System.Drawing.Point(15, 484);
+            this.btnSpose.Name = "btnSpose";
+            this.btnSpose.Size = new System.Drawing.Size(129, 26);
+            this.btnSpose.TabIndex = 11;
+            this.btnSpose.Text = "Spouse";
+            this.btnSpose.UseVisualStyleBackColor = true;
+            this.btnSpose.Click += new System.EventHandler(this.btnSpose_Click);
+            // 
+            // btnWork
+            // 
+            this.btnWork.Location = new System.Drawing.Point(15, 527);
+            this.btnWork.Name = "btnWork";
+            this.btnWork.Size = new System.Drawing.Size(129, 26);
+            this.btnWork.TabIndex = 12;
+            this.btnWork.Text = "Work";
+            this.btnWork.UseVisualStyleBackColor = true;
+            this.btnWork.Click += new System.EventHandler(this.button1_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(800, 608);
+            this.Controls.Add(this.btnWork);
+            this.Controls.Add(this.btnSpose);
+            this.Controls.Add(this.btnFamilyInformation);
+            this.Controls.Add(this.btnUSContact);
+            this.Controls.Add(this.btnPassportInformation);
+            this.Controls.Add(this.btnAdressAndPhone);
+            this.Controls.Add(this.btnPrevious);
             this.Controls.Add(this.btnCompanions);
             this.Controls.Add(this.btnTravelInfornation);
             this.Controls.Add(this.btnPersonalTwo);
@@ -119,6 +203,20 @@
             this.Text = "Form1";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button btnWork;
+
+        private System.Windows.Forms.Button btnSpose;
+
+        private System.Windows.Forms.Button btnFamilyInformation;
+
+        private System.Windows.Forms.Button btnUSContact;
+
+        private System.Windows.Forms.Button btnPassportInformation;
+
+        private System.Windows.Forms.Button btnAdressAndPhone;
+
+        private System.Windows.Forms.Button btnPrevious;
 
         private System.Windows.Forms.Button btnCreateUser;
 
