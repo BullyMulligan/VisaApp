@@ -1,0 +1,243 @@
+{
+  "survey_status": 11,
+  "unique_id": "AA00BW2TTR",
+  "full_name": {
+    "name": "Иван",
+    "surnname": "Попов",
+    "fathername": "Геннадьевич"
+  },
+  "second_name": "Волков",
+  "marital_status": 1,
+  "birth_date": "1992-05-20",
+  "sex": 1,
+  "birth_sity": "Якутск",
+  "birth_country": "Россия",
+  "sitizenship": {
+    "sitizenship": "Россия",
+    "second_sitizenship": true,
+    "second_sitizen_country": "Белорусь",
+    "second_passport_availability": true,
+    "number_second_passport": "1234567",
+    "permanent_resident": true,
+    "second_country": "Узбекистан"
+  },
+  "stay_in_usa": {
+    "national_identification_number": "123456",
+    "social_security_number": "123456789",
+    "taxpayer_number": "098765"
+  },
+  "info_about_travel": {
+    "visa_char": 2,
+    "visa_type": 2,
+    "travel_goal": "Повидать мир",
+    "arrival_date": "2023-04-30",
+    "arrival_city": "New York",
+    "departure_date": "2023-05-07",
+    "departure_city": "Miami",
+    "travel_places": [
+      "Йеллоустоунский парк",
+      "Эмпайр стейт билдинг",
+      "Диснейлэнд",
+      "пляж Майами",
+      "статуя свободы"
+    ],
+    "stop_address": {
+      "street": "1545 Collins Ave",
+      "city": "MIAMI",
+      "region": "FLORIDA",
+      "index": "75664"
+    },
+    "hotel_number": "13056045700",
+    "payer": 3,
+    "have_group": false
+  },
+  "companions": [
+    {
+      "name": "Алиев Руслан",
+      "is_sitizen_usa": false,
+      "address": 0,
+      "usa_status": 0,
+      "status": 4
+    },
+    {
+      "name": "Попова Дарья",
+      "is_sitizen_usa": false,
+      "address": 0,
+      "usa_status": 0,
+      "status": 2
+    }
+  ],
+  "have_been_to_USA": true,
+  "date_arrival": "2010-04-12",
+  "time_arrival": "2",
+  "unit_arrival": 3,
+  "have_driver_doc": true,
+  "driver_doc_number": "456456",
+  "driver_doc_state": "Техас",
+  "have_visa_before": true,
+  "date_issue_visa": "2020-05-20",
+  "visa_number": "12345678",
+  "same_type_visa": true,
+  "same_country": true,
+  "fingers_prints": true,
+  "loss_visa": true,
+  "year_loss_visa": "2015",
+  "loss_explain": "Потерял при пьянке",
+  "cancelled_visa": true,
+  "cancel_explain": "Буянил",
+  "rejection_visa": true,
+  "rejection_reason": "недостаточно информации",
+  "greencard": true,
+  "imigration_explain": "Получил зеленую карту",
+  "address": {
+    "street": "Базарная 35",
+    "city": "Онгудай",
+    "region": "Республика Алтай",
+    "index": "680068",
+    "country": "Россия"
+  },
+  "real_address": {
+    "street": "Энтузиастов 28",
+    "city": "Барнаул",
+    "region": "Алтайский край",
+    "index": "860680",
+    "country": "Россия"
+  },
+  "personal_number": "+998940937094",
+  "additive_number": "+998998876787",
+  "job_number": "99165",
+  "numbers_of_fives_years": [
+    "+79635122747"
+  ],
+  "email": "slashhh8@mail.ru",
+  "email_adresses": [
+    "rainskycry@gmail.com"
+  ],
+  "public_links": [
+    {
+      "linl_soc_web": 18,
+      "link_to_account": "vk.com/bugsmaker"
+    },
+    {
+      "linl_soc_web": 18,
+      "link_to_account": "vk.com/laughtydog"
+    }
+  ],
+  "passport": {
+    "passport_type": 1,
+    "number": "ad12345678",
+    "country": "Россия",
+    "region": "Республика Алтай",
+    "city": "Онгудай",
+    "issuedate": "2012-06-21",
+    "endDate": "2038-05-20",
+    "isLoss": true,
+    "loss_passport_number": "9887874",
+    "loss_passport_country": "Россия",
+    "loss_passport_explain": "Побили и забрали"
+  },
+  "inviter": {
+    "have_invite": true,
+    "name": "Джексон",
+    "surname": "Майкл",
+    "company_name": "NBA",
+    "relationship": 3,
+    "address": {
+      "street": "Briton beach",
+      "city": "Miami",
+      "region": "California",
+      "index": "11111"
+    },
+    "number": "13056045700",
+    "email": "miami@gmail.com"
+  },
+  "father": {
+    "name": "Геннадий",
+    "surname": "Попов",
+    "birth_date": "1967-07-15",
+    "is_sitizen_usa": true,
+    "address": 0,
+    "usa_status": 1,
+    "status": 0
+  },
+  "mother": {
+    "name": "Елена",
+    "surname": "Попова",
+    "birth_date": "1968-04-07",
+    "is_sitizen_usa": true,
+    "address": 0,
+    "usa_status": 2,
+    "status": 0
+  },
+  "spouse": {
+    "name": "Дарья",
+    "surname": "Попова",
+    "birth_date": "1997-05-05",
+    "is_sitizen_usa": false,
+    "birth_country": "Россия",
+    "birht_city": "Барнаул",
+    "address": 4,
+    "usa_status": 0,
+    "status": 0
+  },
+  "job": [
+    {
+      "kind_of_activity": 6,
+      "company_name": "Solutions LAB",
+      "address": {
+        "street": "Шота Руставели",
+        "city": "Ташкент",
+        "region": "Ташкент",
+        "index": "333333",
+        "country": "Узбекистан"
+      },
+      "job_number": "+9987777777",
+      "start_date": "2022-10-13",
+      "wages": "10000000",
+      "spec": "QA-инжинер. Тестировка продуктов",
+      "title": "QA-инженер",
+      "supervizor_surname": "Константинов",
+      "supervizor_name": "Егор"
+    }
+  ],
+  "study": [
+    {
+      "kind_of_activity": 0,
+      "company_name": "ПУ 49",
+      "address": {
+        "street": "Победы 5",
+        "city": "Майма",
+        "region": "Республика Алтай",
+        "index": "213231",
+        "country": "Россия"
+      },
+      "start_date": "2008-09-01",
+      "end_date": "2011-06-30",
+      "spec": "Оператор ЭВМ"
+    }
+  ],
+  "additive_info": {
+    "languages": [
+      "русский",
+      "английский",
+      "c#"
+    ],
+    "countrys": [
+      "Узбекистан",
+      "Казахстан",
+      "Турция"
+    ],
+    "spec_org": "гринпис",
+    "have_spec_skill": false,
+    "have_army": true,
+    "army": {
+      "country": "Россия",
+      "division": "ВДВ",
+      "rang": "рядовой",
+      "specialty": "механик-водитель",
+      "start_date": "2011-06-01",
+      "and_date": "2012-06-01"
+    },
+    "have_spec_group": true
+  }
+}
