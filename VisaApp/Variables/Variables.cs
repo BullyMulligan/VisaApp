@@ -405,6 +405,6 @@ namespace VisaApp
          
         public static By fieldSpec = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxDescribeDuties");
 
-        public static By btnAddJob = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_InsertButtonPrevEmpl");
+        public static string btnAddJob = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_InsertButtonPrevEmpl";
     }
 }
