@@ -105,7 +105,7 @@ namespace VisaApp
             SendKeys(Personal1.fieldBirthDateYear,_date[2]);
             SendKeys(Personal1.fieldBirthCity,_survey.birth_sity);
             Click(Personal1.checkBoxRegionNotApply);
-            Select(Personal1.selectBirthCountry,_survey.birth_country);
+            Select(Personal1.selectBirthCountry,TranslateEn(_survey.birth_country));
             SavePage();
         }
 
@@ -138,7 +138,7 @@ namespace VisaApp
             else
             {
                 Click(Personal2.checkPermanentResidentYes);
-                SendKeys(Personal2.selectOtherPermanentCountry,_survey.sitizenship.second_sitizen_country);
+                Select(Personal2.selectOtherPermanentCountry,_survey.sitizenship.second_sitizen_country);
             }
 
             if (_survey.stay_in_usa.national_identification_number!=null)
@@ -478,31 +478,100 @@ namespace VisaApp
                     AddDate(_survey.job[i].start_date,StringBy(PreviousWork.selectStartDay,i),StringBy(PreviousWork.selectStartMonth,i),StringBy(PreviousWork.fieldStartYear,i));
                     AddDate(_survey.job[i].end_date,StringBy(PreviousWork.selectEndDay,i),StringBy(PreviousWork.selectEndMonth,i),StringBy(PreviousWork.fieldEndYear,i));
                     SendKeys(StringBy(PreviousWork.fieldSpec, i), _survey.job[i].spec);
-                    
                 }
-                
+            }
+            else
+            {
+                Click(PreviousWork.checkPreviousJobNo);
+            }
+            AdditionalPreviousStudy();
+            SavePage();
+            TrainingInfornation();
+        }
+        private void AdditionalPreviousStudy()
+        {
+            if (_survey.study.Count>=1)
+            {
+                Click(PreviousStudy.checkPreviousStudyYes);
+                for (int i = 0; i < _survey.study.Count-1; i++)
+                {
+                    Click(StringBy(PreviousStudy.btnAddStudy,i));
+                }
+                for (int i = 0; i < _survey.study.Count; i++)
+                {
+                    SendKeys(StringBy(PreviousStudy.fieldCompanyName,i),_survey.study[i].company_name);
+                    FillLinesAddress(_survey.study[i].address.street,StringBy(PreviousStudy.fieldStreet1,i),StringBy(PreviousStudy.fieldStreet2,i));
+                    SendKeys(StringBy(PreviousStudy.fieldCity,i),_survey.study[i].address.city);
+                    DoesNotApply(_survey.study[i].address.region,StringBy(PreviousStudy.fieldState,i),StringBy(PreviousStudy.checkStateNotApply,i));
+                    DoesNotApply(_survey.study[i].address.index,StringBy(PreviousStudy.fieldZip,i),StringBy(PreviousStudy.checkZipNotApply,i));
+                    Select(StringBy(PreviousStudy.selectCountry,i),TranslateEn(_survey.study[i].address.country));
+                    SendKeys(StringBy(PreviousStudy.fieldCourse,i),_survey.study[i].spec);
+                    
+                    AddDate(_survey.study[i].start_date,StringBy(PreviousStudy.selectStartDay,i),StringBy(PreviousStudy.selectStartMonth,i),StringBy(PreviousStudy.fieldStartYear,i));
+                    AddDate(_survey.study[i].end_date,StringBy(PreviousStudy.selectEndDay,i),StringBy(PreviousStudy.selectEndMonth,i),StringBy(PreviousStudy.fieldEndYear,i));
+                }
+            }
+            else
+            {
+                Click(PreviousStudy.checkPreviousStudyNo);
             }
         }
 
-        private By StringBy(string id,int n)
+        private void TrainingInfornation()
         {
-                // Находим индекс второго вхождения подстроки "100"
-                int index = id.IndexOf("100", id.IndexOf("100") + 1);
+            
+            Click(TraningInfo.checkClanNo);
+            AddAndFillFields(_survey.additive_info.languages, TraningInfo.btnAddLanguage, TraningInfo.fieldLanguage);
+            if (CheckBox(_survey.additive_info.countrys.Count>0,TraningInfo.checkCountryVisitYes,TraningInfo.checkCountryVisitNo))
+            {
+                AddAndSelectFields(_survey.additive_info.countrys,TraningInfo.btnAddCountry,TraningInfo.selectCountry);
+            }
+            if (CheckBox(_survey.additive_info.spec_org.Length>0,TraningInfo.checkProfessionalOrganizationYes,TraningInfo.checkProfessionalOrganizationNo))
+            {
+                SendKeys(TraningInfo.fieldProfessionalOrganizationName,_survey.additive_info.spec_org);
+            }
+            Click(TraningInfo.checkSpecialSkillNo);
+            if (CheckBox(_survey.additive_info.have_army,TraningInfo.checkMilitaryYes,TraningInfo.checkMilitaryNo))
+            {
+                Select(TraningInfo.selectCountryArmy,_survey.additive_info.army.country);
+                SendKeys(TraningInfo.fieldBranch,_survey.additive_info.army.division);
+                SendKeys(TraningInfo.fieldRank,_survey.additive_info.army.rang);
+                SendKeys(TraningInfo.fieldSpeciality,_survey.additive_info.army.specialty);
+                AddDate(_survey.additive_info.army.start_date,TraningInfo.fieldStartDay,TraningInfo.selectStartMonth,TraningInfo.fieldStartYear);
+                AddDate(_survey.additive_info.army.and_date,TraningInfo.selectEndDay,TraningInfo.selectStartMonth,TraningInfo.fieldEndYear);
+            }
 
-                // Генерируем строку, которую нужно вставить
-                string replacement = (n == 1) ? "101" : (n == 20) ? "120" : "";
+            Click(TraningInfo.checkRebelNo);
 
-                // Если индекс не найден, возвращаем исходную строку
-                if (index == -1 || replacement == "")
-                {
-                    return By.Id(id);
-                }
-                else
-                {
-                    // Вставляем новое значение и возвращаем измененную строку
-                    return By.Id(id.Substring(0, index) + replacement + id.Substring(index + 3));
-                }
+            SavePage();
         }
+
+        private By StringBy(string id, int n)
+        {
+            // Находим индекс первого вхождения подстроки "100"
+            int index1 = id.IndexOf("100");
+
+            // Если первое вхождение не найдено, возвращаем исходный By
+            if (index1 == -1)
+            {
+                return By.Id(id);
+            }
+
+            // Находим индекс второго вхождения подстроки "100"
+            int index2 = id.IndexOf("100", index1 + 1);
+
+            // Если второе вхождение не найдено, возвращаем исходный By
+            if (index2 == -1)
+            {
+                return By.Id(id);
+            }
+
+            // Вставляем новое значение и возвращаем измененный By
+            string newId = id.Substring(0, index2) + n + id.Substring(index2 + 3);
+            return By.Id(newId);
+        }
+
+
         private void SavePage()
         {
             Click(Personal1.btnPersonalZeroSave);
@@ -566,6 +635,34 @@ namespace VisaApp
                 Driver.FindElements(field)[i].SendKeys(list[i].ToString());
             }
         }
+        
+        private void AddAndFillFields<T>(List<T> list, string button, string id)
+        {
+            for (int i = 0; i < list.Count-1; i++)
+            {
+                Driver.FindElement(StringBy(button,i)).Click();
+                Thread.Sleep(1000);
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Driver.FindElement(StringBy(id, i)).SendKeys(TranslateEn(list[i].ToString()));
+                MessageBox.Show(id + " " + i);
+            }
+        }
+        private void AddAndSelectFields<T>(List<T> list, By button, By select)
+        {
+            for (int i = 0; i < list.Count-1; i++)
+            {
+                Driver.FindElements(button)[i].Click();
+                Thread.Sleep(1000);
+            }
+
+            for (int i = 0; i < list.Count; i++)
+            {
+                Select(select,list[i].ToString(),i);
+            }
+        }
 
         //заполняем форму с датой
         private void AddDate(string fullDate,By day, By month, By year)
@@ -603,13 +700,19 @@ namespace VisaApp
         {
             IWebElement dropdown = Driver.FindElement(select);
             SelectElement selectElement = new SelectElement(dropdown);
-            selectElement.SelectByText(text);
+            selectElement.SelectByText(TranslateEn(text));
         }
         private void Select(By select, int number)
         {
             IWebElement dropdown = Driver.FindElement(select);
             SelectElement selectElement = new SelectElement(dropdown);
             selectElement.SelectByIndex(number);
+        }
+        private void Select(By select, string text,int i)
+        {
+            IWebElement dropdown = Driver.FindElements(select)[i];
+            SelectElement selectElement = new SelectElement(dropdown);
+            selectElement.SelectByText(text);
         }
         
 

@@ -355,56 +355,90 @@ namespace VisaApp
         public static string fieldPhone = "ctl00_SiteContentPlaceHolder_FormView1_tbxWORK_EDUC_TEL";
         public static string selectCountry = "ctl00_SiteContentPlaceHolder_FormView1_ddlEmpSchCountry";
 
-        public static string fieldJobTitle = "";
-        public static string fieldSupervizorSurname = "";
-        public static string checkSurnameSupervizorSurnameDontKnow = "";
-        public static string fieldSupervizorName = "";
-        public static string checkSurnameSupervizorNameDontKnow = "";
+        public static string fieldJobTitle = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbJobTitle";
+        public static string fieldSupervizorSurname = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbSupervisorSurname";
+        public static string checkSurnameSupervizorSurnameDontKnow = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_cbxSupervisorSurname_NA";
+        public static string fieldSupervizorName = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbSupervisorGivenName";
+        public static string checkSurnameSupervizorNameDontKnow = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_cbxSupervisorGivenName_NA";
          
-        public static string selectStartDay = "";
-        public static string selectStartMonth = "ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromMonth";
-        public static string fieldStartYear = "ctl00_SiteContentPlaceHolder_FormView1_tbxEmpDateFromYear";
+        public static string selectStartDay = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_ddlEmpDateFromDay";
+        public static string selectStartMonth = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_ddlEmpDateFromMonth";
+        public static string fieldStartYear = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbxEmpDateFromYear";
          
-        public static string selectEndDay = "ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromDay";
-        public static string selectEndMonth = "ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromMonth";
-        public static string fieldEndYear = "ctl00_SiteContentPlaceHolder_FormView1_tbxEmpDateFromYear";
+        public static string selectEndDay = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_ddlEmpDateToDay";
+        public static string selectEndMonth = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_ddlEmpDateToMonth";
+        public static string fieldEndYear = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbxEmpDateToYear";
          
-        public static string fieldSpec = "ctl00_SiteContentPlaceHolder_FormView1_tbxDescribeDuties";
+        public static string fieldSpec = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbDescribeDuties";
 
         public static string btnAddJob = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_InsertButtonPrevEmpl";
     }
     public class PreviousStudy
+   {
+        public static By checkPreviousStudyYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblOtherEduc_0");
+        public static By checkPreviousStudyNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblOtherEduc_1");
+         
+        public static string fieldCompanyName = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolName";
+        public static string fieldStreet1 = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolAddr1";
+        public static string fieldStreet2 = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolAddr2";
+        public static string fieldCity = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolCity";
+        public static string fieldState = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxEDUC_INST_ADDR_STATE";
+        public static string checkStateNotApply = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_cbxEDUC_INST_ADDR_STATE_NA";
+        public static string fieldZip = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxEDUC_INST_POSTAL_CD";
+        public static string checkZipNotApply = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_cbxEDUC_INST_POSTAL_CD_NA";
+        public static string selectCountry = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_ddlSchoolCountry";
+        public static string fieldCourse = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolCourseOfStudy";
+       
+        public static string selectStartDay = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_ddlSchoolFromDay";
+        public static string selectStartMonth = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_ddlSchoolFromMonth";
+        public static string fieldStartYear = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolFromYear";
+         
+        public static string selectEndDay = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_ddlSchoolToDay";
+        public static string selectEndMonth = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_ddlSchoolToMonth";
+        public static string fieldEndYear = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_tbxSchoolToYear";
+         
+        public static string btnAddStudy = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEduc_ctl00_InsertButtonPrevEduc";
+    }
+
+    public static class TraningInfo
     {
-        public static By checkPreviousJobYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblPreviouslyEmployed_0");
-        public static By checkPreviousJobNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblPreviouslyEmployed_1");
-         
-        public static By fieldCompanyName = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_tbEmployerName");
-        public static By fieldStreet1 = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxEmpSchAddr1");
-        public static By fieldStreet2 = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxEmpSchAddr2");
-        public static By fieldCity = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxEmpSchCity");
-        public static By fieldState = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxWORK_EDUC_ADDR_STATE");
-        public static By checkStateNotApply = By.Id("ctl00_SiteContentPlaceHolder_FormView1_cbxWORK_EDUC_ADDR_STATE_NA");
-        public static By fieldZip = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxWORK_EDUC_ADDR_POSTAL_CD");
-        public static By checkZipNotApply = By.Id("ctl00_SiteContentPlaceHolder_FormView1_cbxWORK_EDUC_ADDR_POSTAL_CD_NA");
-        public static By fieldPhone = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxWORK_EDUC_TEL");
-        public static By selectCountry = By.Id("ctl00_SiteContentPlaceHolder_FormView1_ddlEmpSchCountry");
-
-        public static By fieldJobTitle = By.Id("");
-        public static By fieldSupervizorSurname = By.Id("");
-        public static By checkSurnameSupervizorSurnameDontKnow = By.Id("");
-        public static By fieldSupervizorName = By.Id("");
-        public static By checkSurnameSupervizorNameDontKnow = By.Id("");
-         
-        public static By selectStartDay = By.Id("ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromDay");
-        public static By selectStartMonth = By.Id("ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromMonth");
-        public static By fieldStartYear = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxEmpDateFromYear");
-         
-        public static By selectEndDay = By.Id("ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromDay");
-        public static By selectEndMonth = By.Id("ctl00_SiteContentPlaceHolder_FormView1_ddlEmpDateFromMonth");
-        public static By fieldEndYear = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxEmpDateFromYear");
-         
-        public static By fieldSpec = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxDescribeDuties");
-
-        public static string btnAddJob = "ctl00_SiteContentPlaceHolder_FormView1_dtlPrevEmpl_ctl00_InsertButtonPrevEmpl";
+        public static By checkClanYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblCLAN_TRIBE_IND_0");
+        public static By checkClanNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblCLAN_TRIBE_IND_1");
+        public static By ClanName = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxCLAN_TRIBE_NAME");
+        
+        public static string fieldLanguage = "ctl00_SiteContentPlaceHolder_FormView1_dtlLANGUAGES_ctl00_tbxLANGUAGE_NAME";
+        public static string btnAddLanguage = "ctl00_SiteContentPlaceHolder_FormView1_dtlLANGUAGES_ctl00_InsertButtonLANGUAGE";
+        
+        public static By checkCountryVisitYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblCOUNTRIES_VISITED_IND_0");
+        public static By checkCountryVisitNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblCOUNTRIES_VISITED_IND_1");
+        public static By selectCountry = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlCountriesVisited_ctl00_ddlCOUNTRIES_VISITED");
+        public static By btnAddCountry = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlCountriesVisited_ctl00_InsertButtonCountriesVisited");
+        
+        public static By checkProfessionalOrganizationYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblORGANIZATION_IND_0");
+        public static By checkProfessionalOrganizationNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblORGANIZATION_IND_1");
+        public static By fieldProfessionalOrganizationName = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlORGANIZATIONS_ctl00_tbxORGANIZATION_NAME");
+        
+        public static By checkSpecialSkillYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblSPECIALIZED_SKILLS_IND_0");
+        public static By checkSpecialSkillNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblSPECIALIZED_SKILLS_IND_1");
+        public static By checkSpecialSkill = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxSPECIALIZED_SKILLS_EXPL");
+        
+        public static By checkMilitaryYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_CNTRY");
+        public static By checkMilitaryNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_BRANCH");
+        public static By selectCountryArmy = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_CNTRY");
+        public static By fieldBranch = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_BRANCH");
+        public static By fieldRank = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_RANK");
+        public static By fieldSpeciality = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_SPECIALTY");
+        public static By fieldStartDay = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_FROMDay");
+        public static By selectStartMonth = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_FROMMonth");
+        public static By fieldStartYear = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_FROMYear");
+        public static By selectEndDay = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_TODay");
+        public static By selectEndMonth = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_TOMonth");
+        public static By fieldEndYear = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_TOYear");
+        
+        public static By checkRebelYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblINSURGENT_ORG_IND_0");
+        public static By checkRebelNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblINSURGENT_ORG_IND_1");
+        public static By fieldExplain = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxINSURGENT_ORG_EXPL");
+        
+        
     }
 }
