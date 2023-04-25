@@ -43,6 +43,7 @@
             this.btnFamilyInformation = new System.Windows.Forms.Button();
             this.btnSpose = new System.Windows.Forms.Button();
             this.btnWork = new System.Windows.Forms.Button();
+            this.btnOnly = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoadSurvey
@@ -181,11 +182,22 @@
             this.btnWork.UseVisualStyleBackColor = true;
             this.btnWork.Click += new System.EventHandler(this.button1_Click);
             // 
+            // btnOnly
+            // 
+            this.btnOnly.Location = new System.Drawing.Point(15, 570);
+            this.btnOnly.Name = "btnOnly";
+            this.btnOnly.Size = new System.Drawing.Size(129, 26);
+            this.btnOnly.TabIndex = 13;
+            this.btnOnly.Text = "Security";
+            this.btnOnly.UseVisualStyleBackColor = true;
+            this.btnOnly.Click += new System.EventHandler(this.btnOnly_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 608);
+            this.Controls.Add(this.btnOnly);
             this.Controls.Add(this.btnWork);
             this.Controls.Add(this.btnSpose);
             this.Controls.Add(this.btnFamilyInformation);
@@ -203,6 +215,8 @@
             this.Text = "Form1";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button btnOnly;
 
         private System.Windows.Forms.Button btnWork;
 

@@ -411,8 +411,8 @@ namespace VisaApp
         
         public static By checkCountryVisitYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblCOUNTRIES_VISITED_IND_0");
         public static By checkCountryVisitNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblCOUNTRIES_VISITED_IND_1");
-        public static By selectCountry = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlCountriesVisited_ctl00_ddlCOUNTRIES_VISITED");
-        public static By btnAddCountry = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlCountriesVisited_ctl00_InsertButtonCountriesVisited");
+        public static string selectCountry = "ctl00_SiteContentPlaceHolder_FormView1_dtlCountriesVisited_ctl00_ddlCOUNTRIES_VISITED";
+        public static string btnAddCountry = "ctl00_SiteContentPlaceHolder_FormView1_dtlCountriesVisited_ctl00_InsertButtonCountriesVisited";
         
         public static By checkProfessionalOrganizationYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblORGANIZATION_IND_0");
         public static By checkProfessionalOrganizationNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblORGANIZATION_IND_1");
@@ -422,10 +422,10 @@ namespace VisaApp
         public static By checkSpecialSkillNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblSPECIALIZED_SKILLS_IND_1");
         public static By checkSpecialSkill = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxSPECIALIZED_SKILLS_EXPL");
         
-        public static By checkMilitaryYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_CNTRY");
-        public static By checkMilitaryNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_BRANCH");
+        public static By checkMilitaryYes = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblMILITARY_SERVICE_IND_0");
+        public static By checkMilitaryNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblMILITARY_SERVICE_IND_1");
         public static By selectCountryArmy = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_CNTRY");
-        public static By fieldBranch = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_BRANCH");
+        public static By fieldBranch = By.XPath("//input[@name='ctl00$SiteContentPlaceHolder$FormView1$dtlMILITARY_SERVICE$ctl00$tbxMILITARY_SVC_BRANCH']");
         public static By fieldRank = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_RANK");
         public static By fieldSpeciality = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_tbxMILITARY_SVC_SPECIALTY");
         public static By fieldStartDay = By.Id("ctl00_SiteContentPlaceHolder_FormView1_dtlMILITARY_SERVICE_ctl00_ddlMILITARY_SVC_FROMDay");
@@ -440,5 +440,44 @@ namespace VisaApp
         public static By fieldExplain = By.Id("ctl00_SiteContentPlaceHolder_FormView1_tbxINSURGENT_ORG_EXPL");
         
         
+    }
+
+    public static class OnlyNo
+    {
+        public static By checkPublicHealthNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblDisease_1");
+        public static By checkDesorderNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblDisorder_1");
+        public static By checkDruguserNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblDruguser_1");
+        
+        public static By checkArrestedNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblArrested_1");
+        public static By checkControlledSubstancedNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblControlledSubstances_1");
+        public static By checkProstitutionNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblProstitution_1");
+        public static By checkMoneyLaunderingNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblMoneyLaundering_1");
+        public static By checkHumanTraffickingNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblHumanTrafficking_1");
+        public static By checkHumanTraffickingRelatedNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblHumanTraffickingRelated_1");
+        public static By checkServereTraffikingNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblAssistedSevereTrafficking_1");
+        
+        public static By checkIllegalNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblIllegalActivity_1");
+        public static By checkTerroristActivityNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblTerroristActivity_1");
+        public static By checkTerroristSupportNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblTerroristSupport_1");
+        public static By checkTerroristOrgNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblTerroristOrg_1");
+        public static By checkTerroristRelNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblTerroristRel_1");
+        public static By checkGenocideNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblGenocide_1");
+        public static By checkTortureNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblTorture_1");
+        public static By checkViolenceNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblExViolence_1");
+        public static By checkChildSoldierNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblChildSoldier_1");
+        public static By checkReligiousFreedomNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblReligiousFreedom_1");
+        public static By checkPopulationControlNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblPopulationControls_1");
+        public static By checkTransplantNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblTransplant_1");
+
+        public static By checkRemovalHearingNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblRemovalHearing_1");
+        public static By checkImigrationFraudNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblImmigrationFraud_1");
+        public static By checkFailToAttendNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblFailToAttend_1");
+        public static By checkVisaViolationNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblVisaViolation_1");
+        public static By checkDeportNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblDeport_1");
+        
+        public static By checkChildCustodyNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblChildCustody_1");
+        public static By checkVoltingViolationNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblVotingViolation_1");
+        public static By checkRenounceExpNo = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblRenounceExp_1");
+        public static By checkAttWoReimb = By.Id("ctl00_SiteContentPlaceHolder_FormView1_rblAttWoReimb_1");
     }
 }

@@ -1,15 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Newtonsoft.Json;
-using OpenQA.Selenium.Chrome;
 using JsonSerializer = System.Text.Json.JsonSerializer;
 
 namespace VisaApp
@@ -110,8 +103,6 @@ namespace VisaApp
         private void btnCompanions_Click(object sender, EventArgs e)
         {
             Sel selenium = new Sel(survey);
-            selenium.NextPage();
-            //selenium.NextPage();
             selenium.TravelCompanionsInformation();
             survey.survey_status = 4;
             VisibleButtons();
@@ -134,7 +125,8 @@ namespace VisaApp
                 {btnUSContact,7},
                 {btnFamilyInformation,8},
                 {btnSpose,9},
-                {btnWork,10}
+                {btnWork,10},
+                {btnOnly,11}
             };
             foreach (var button in buttons)
             {
@@ -187,6 +179,9 @@ namespace VisaApp
             selenium.AdditionalWork();
             survey.survey_status = 11;
             SaveSurvey();
+            selenium.BackGroundAndSecury();
+            survey.survey_status = 12;
+            SaveSurvey();
 
 
             VisibleButtons();
@@ -196,10 +191,6 @@ namespace VisaApp
         {
             Sel selenium = new Sel(survey);
             selenium.ContinueChangeUser();
-            selenium.NextPage();
-            selenium.NextPage();
-            selenium.NextPage();
-            selenium.NextPage();
             selenium.AddPrevious();
             survey.survey_status = 5;
             SaveSurvey();
@@ -256,6 +247,15 @@ namespace VisaApp
             selenium.ContinueChangeUser();
             selenium.AdditionalWork();
             survey.survey_status = 11;
+            SaveSurvey();
+        }
+
+        private void btnOnly_Click(object sender, EventArgs e)
+        {
+            Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
+            selenium.BackGroundAndSecury();
+            survey.survey_status = 12;
             SaveSurvey();
         }
     }
