@@ -155,7 +155,7 @@ namespace VisaApp
                 Click(Personal2.checkNationalIdentificationNumber);
             }
 
-            if (_survey.stay_in_usa.national_identification_number != null)
+            if (_survey.stay_in_usa.national_identification_number != null && _survey.stay_in_usa.national_identification_number.Length==9)
             {
                 SendKeys(Personal2.fieldSocialNumberOne, _survey.stay_in_usa.social_security_number.Substring(0, 3));
                 SendKeys(Personal2.fieldSocialNumberTwo, _survey.stay_in_usa.social_security_number.Substring(3, 2));
@@ -180,7 +180,7 @@ namespace VisaApp
 
         public void TravelInfornation()
         {
-            Select(Travel.selectVisaTypeChar, _survey.info_about_travel.visa_char);
+            Select(Travel.selectVisaTypeChar, Int32.Parse(_survey.info_about_travel.visa_char));
             Select(Travel.selectVisaType, _survey.info_about_travel.visa_type);
             Click(Travel.checkHaveTravelPlansYes);
             AddDate(_survey.info_about_travel.arrival_date, Travel.selectDateArrivalDay, Travel.selectDateArrivalMonht,
@@ -259,7 +259,7 @@ namespace VisaApp
             {
                 AddDate(_survey.date_issue_visa, Previous.selectDateIssueDay, Previous.selectDateIssueMonth,
                     Previous.fieldDateIssueYear);
-                if (_survey.visa_number != null)
+                if (_survey.visa_number != null && _survey.visa_number.Length == 12)
                 {
                     SendKeys(Previous.fieldVisaNumber, _survey.visa_number);
                 }
@@ -786,12 +786,13 @@ namespace VisaApp
             for (int i = 0; i < list.Count - 1; i++)
             {
                 Driver.FindElements(button)[i].Click();
-                Thread.Sleep(1000);
+                Thread.Sleep(2000);
             }
 
             for (int i = 0; i < list.Count; i++)
             {
                 Driver.FindElements(field)[i].SendKeys(list[i].ToString());
+                Thread.Sleep(2000);
             }
         }
 
