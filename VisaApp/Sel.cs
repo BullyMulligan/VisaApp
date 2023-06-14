@@ -306,7 +306,7 @@ namespace VisaApp
             DoesNotApply(_survey.address.region, Address.fieldHomeState, Address.checkHomeStateNotApply);
             DoesNotApply(_survey.address.index, Address.fieldHomeZip, Address.checkHomeZipNotApply);
             Select(Address.selectHomeCountry, TranslateEn(_survey.address.country));
-            if (CheckBox((_survey.real_address != null), Address.checkMailAddressNo, Address.checkMailAddressYes))
+            if (CheckBox((_survey.real_address != null), Address.checkMailAddressNo,Address.checkMailAddressYes))
             {
                 FillLinesAddress(_survey.real_address.street, Address.fieldMailStreet, Address.fieldMailStreet2);
                 SendKeys(Address.fieldMailCity, _survey.real_address.city);
