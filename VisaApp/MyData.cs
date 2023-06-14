@@ -151,7 +151,7 @@ namespace VisaApp
     
         public class InfoAboutTravel
         {
-            public int visa_char {get;set;}
+            public string visa_char {get;set;}
             public int visa_type {get;set;}
             public string travel_goal {get;set;}
             public string arrival_date {get;set;}

@@ -1,19 +1,22 @@
 using System;
 using System.Net.Http;
 using System.Text;
+using System.Windows.Forms;
 using Newtonsoft.Json;
+using Newtonsoft.Json.Linq;
 
 namespace VisaApp
 {
     public class Translator
     {
-        private static readonly string key = "6437b5dc34594f06a1dc9bbbe4f40891";
+        //ключ берем на портале Azure. Нужно создать переводчик(https://www.youtube.com/watch?v=l6Rl4HSZVvg)
+        private static readonly string key = "c3097151b06b4e21a24739a64bf29d41";
         private static readonly string endpoint = "https://api.cognitive.microsofttranslator.com";
 
         public string TranslateText(string textToTranslate)
         {
             string route = $"/translate?api-version=3.0&to=en";
-            object[] body = new object[] { new { Text = textToTranslate } };
+            var body = new[] { new { Text = textToTranslate } };
             var requestBody = JsonConvert.SerializeObject(body);
 
             using (var client = new HttpClient())
@@ -30,9 +33,9 @@ namespace VisaApp
 
                 // Read response as a string.
                 string result = response.Content.ReadAsStringAsync().GetAwaiter().GetResult();
-                var deserializedResponseBody = JsonConvert.DeserializeObject<object[]>(result);
-                var translations = deserializedResponseBody[0] as Newtonsoft.Json.Linq.JObject;
-                var translation = translations["translations"][0]["text"].ToString();
+                var deserializedResponse = JsonConvert.DeserializeObject<JArray>(result);
+                var translations = deserializedResponse[0]?["translations"];
+                var translation = translations?[0]?["text"].ToString();
 
                 return translation;
             }

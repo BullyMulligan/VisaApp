@@ -867,6 +867,12 @@ namespace VisaApp
             SelectElement selectElement = new SelectElement(dropdown);
             selectElement.SelectByText(TranslateEn(text));
         }
+        private void SelectWithoutTranslate(By select, string text)
+        {
+            IWebElement dropdown = Driver.FindElement(select);
+            SelectElement selectElement = new SelectElement(dropdown);
+            selectElement.SelectByText((text));
+        }
 
         private void Select(By select, int number)
         {
@@ -887,6 +893,11 @@ namespace VisaApp
         {
             Driver.FindElement(element).Clear();
             Driver.FindElement(element).SendKeys(TranslateEn(text));
+        }
+        private void SendKeysWithoutTr(By element, string text)
+        {
+            Driver.FindElement(element).Clear();
+            Driver.FindElement(element).SendKeys((text));
         }
 
         private void SendKeysTranslite(By element, string text)
