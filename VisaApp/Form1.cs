@@ -71,6 +71,7 @@ namespace VisaApp
         private void btnCreateUser_Click(object sender, EventArgs e)
         {
             Sel selenium = new Sel(survey);
+            selenium.Setup();
             survey=selenium.CreateUser();
             SaveSurvey();
             selenium.PersonalOne();
@@ -83,7 +84,8 @@ namespace VisaApp
         private void btnPersonalTwo_Click(object sender, EventArgs e)
         {
             Sel selenium = new Sel(survey);
-            selenium.NextPage();
+            selenium.ContinueChangeUser();
+            //selenium.NextPage();
             selenium.PersonalTwo();
             survey.survey_status = 2;
             VisibleButtons();
@@ -93,7 +95,8 @@ namespace VisaApp
         private void btnTravelInfornation_Click(object sender, EventArgs e)
         {
             Sel selenium = new Sel(survey);
-            selenium.NextPage(); 
+            selenium.ContinueChangeUser();
+            //selenium.NextPage(); 
             //selenium.NextPage();
             selenium.TravelInfornation();
             survey.survey_status = 3;
@@ -103,6 +106,7 @@ namespace VisaApp
         private void btnCompanions_Click(object sender, EventArgs e)
         {
             Sel selenium = new Sel(survey);
+            selenium.ContinueChangeUser();
             selenium.TravelCompanionsInformation();
             survey.survey_status = 4;
             VisibleButtons();
