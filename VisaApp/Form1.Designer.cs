@@ -44,6 +44,10 @@
             this.btnSpose = new System.Windows.Forms.Button();
             this.btnWork = new System.Windows.Forms.Button();
             this.btnOnly = new System.Windows.Forms.Button();
+            this.Identificator = new System.Windows.Forms.Label();
+            this.labelName = new System.Windows.Forms.Label();
+            this.comboBoxStatus = new System.Windows.Forms.ComboBox();
+            this.btnChangeStatus = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnLoadSurvey
@@ -192,11 +196,50 @@
             this.btnOnly.UseVisualStyleBackColor = true;
             this.btnOnly.Click += new System.EventHandler(this.btnOnly_Click);
             // 
+            // Identificator
+            // 
+            this.Identificator.Location = new System.Drawing.Point(679, 18);
+            this.Identificator.Name = "Identificator";
+            this.Identificator.Size = new System.Drawing.Size(109, 25);
+            this.Identificator.TabIndex = 15;
+            this.Identificator.Text = "Идентификатор";
+            // 
+            // labelName
+            // 
+            this.labelName.Location = new System.Drawing.Point(545, 18);
+            this.labelName.Name = "labelName";
+            this.labelName.Size = new System.Drawing.Size(109, 25);
+            this.labelName.TabIndex = 16;
+            this.labelName.Text = "Имя";
+            // 
+            // comboBoxStatus
+            // 
+            this.comboBoxStatus.FormattingEnabled = true;
+            this.comboBoxStatus.Items.AddRange(new object[] { "0 - Пользователь не создан", "1 - Персональная информация(стр.1)", "2 - Персональная информация(стр.2)", "3 - Информация о путешествии", "4 - Компаньоны", "5 - Предыдущие путешествия", "6 - Адреса и телефоны", "7 - Информация о паспорте", "8 - Контакты в USA", "9 - Информация о семье", "10 - Информация о супруге", "11 - Работа", "12 - Жмем только \"нет\"" });
+            this.comboBoxStatus.Location = new System.Drawing.Point(542, 66);
+            this.comboBoxStatus.Name = "comboBoxStatus";
+            this.comboBoxStatus.Size = new System.Drawing.Size(96, 21);
+            this.comboBoxStatus.TabIndex = 17;
+            // 
+            // btnChangeStatus
+            // 
+            this.btnChangeStatus.Location = new System.Drawing.Point(664, 61);
+            this.btnChangeStatus.Name = "btnChangeStatus";
+            this.btnChangeStatus.Size = new System.Drawing.Size(124, 28);
+            this.btnChangeStatus.TabIndex = 18;
+            this.btnChangeStatus.Text = "Изменить статус";
+            this.btnChangeStatus.UseVisualStyleBackColor = true;
+            this.btnChangeStatus.Click += new System.EventHandler(this.btnChangeStatus_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 608);
+            this.Controls.Add(this.btnChangeStatus);
+            this.Controls.Add(this.comboBoxStatus);
+            this.Controls.Add(this.labelName);
+            this.Controls.Add(this.Identificator);
             this.Controls.Add(this.btnOnly);
             this.Controls.Add(this.btnWork);
             this.Controls.Add(this.btnSpose);
@@ -212,9 +255,17 @@
             this.Controls.Add(this.btnCreateUser);
             this.Controls.Add(this.btnLoadSurvey);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "VisaAll";
             this.ResumeLayout(false);
         }
+
+        private System.Windows.Forms.Button btnChangeStatus;
+
+        private System.Windows.Forms.ComboBox comboBoxStatus;
+
+        private System.Windows.Forms.Label labelName;
+
+        private System.Windows.Forms.Label Identificator;
 
         private System.Windows.Forms.Button btnOnly;
 

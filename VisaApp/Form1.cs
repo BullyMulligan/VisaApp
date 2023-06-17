@@ -61,6 +61,9 @@ namespace VisaApp
             string json  = File.ReadAllText(openFileDialogSurvey.FileName);
             survey = new MyData();
             survey = JsonSerializer.Deserialize<MyData>(json);
+            Identificator.Text = survey.unique_id;
+            labelName.Text = $"{survey.full_name.surnname} {survey.full_name.name}";
+            comboBoxStatus.SelectedItem = survey.survey_status;
         }
 
         private void btnLoadSurvey_Click(object sender, EventArgs e)
@@ -147,47 +150,53 @@ namespace VisaApp
 
         private void btnStartAll_Click(object sender, EventArgs e)
         {
-            Sel selenium = new Sel(survey);
-            survey=selenium.CreateUser();
-            SaveSurvey();
-            selenium.PersonalOne();
-            survey.survey_status = 1;
-            SaveSurvey();
-            selenium.PersonalTwo();
-            survey.survey_status = 2;
-            SaveSurvey();
-            selenium.TravelInfornation();
-            survey.survey_status = 3;
-            SaveSurvey();
-            selenium.TravelCompanionsInformation();
-            survey.survey_status = 4;
-            SaveSurvey();
-            selenium.AddPrevious();
-            survey.survey_status = 5;
-            SaveSurvey();
-            selenium.AddressAndPhone();
-            survey.survey_status = 6;
-            SaveSurvey();
-            selenium.AddPassport();
-            survey.survey_status = 7;
-            SaveSurvey();
-            selenium.USContact();
-            survey.survey_status = 8;
-            SaveSurvey();
-            selenium.Family();
-            survey.survey_status = 9;
-            SaveSurvey();
-            selenium.AddSpouse();
-            survey.survey_status = 10;
-            SaveSurvey();
-            selenium.AdditionalWork();
-            survey.survey_status = 11;
-            SaveSurvey();
-            selenium.BackGroundAndSecury();
-            survey.survey_status = 12;
-            SaveSurvey();
-
-
+            try
+            {
+                Sel selenium = new Sel(survey);
+                survey = selenium.CreateUser();
+                SaveSurvey();
+                selenium.PersonalOne();
+                survey.survey_status = 1;
+                SaveSurvey();
+                selenium.PersonalTwo();
+                survey.survey_status = 2;
+                SaveSurvey();
+                selenium.TravelInfornation();
+                survey.survey_status = 3;
+                SaveSurvey();
+                selenium.TravelCompanionsInformation();
+                survey.survey_status = 4;
+                SaveSurvey();
+                selenium.AddPrevious();
+                survey.survey_status = 5;
+                SaveSurvey();
+                selenium.AddressAndPhone();
+                survey.survey_status = 6;
+                SaveSurvey();
+                selenium.AddPassport();
+                survey.survey_status = 7;
+                SaveSurvey();
+                selenium.USContact();
+                survey.survey_status = 8;
+                SaveSurvey();
+                selenium.Family();
+                survey.survey_status = 9;
+                SaveSurvey();
+                selenium.AddSpouse();
+                survey.survey_status = 10;
+                SaveSurvey();
+                selenium.AdditionalWork();
+                survey.survey_status = 11;
+                SaveSurvey();
+                selenium.BackGroundAndSecury();
+                survey.survey_status = 12;
+                SaveSurvey();
+                VisibleButtons();
+            }
+            catch (Exception)
+            {
+                
+            }
             VisibleButtons();
         }
 
@@ -261,6 +270,13 @@ namespace VisaApp
             selenium.BackGroundAndSecury();
             survey.survey_status = 12;
             SaveSurvey();
+        }
+
+        private void btnChangeStatus_Click(object sender, EventArgs e)
+        {
+            survey.survey_status = comboBoxStatus.SelectedIndex;
+            SaveSurvey();
+            VisibleButtons();
         }
     }
 }
