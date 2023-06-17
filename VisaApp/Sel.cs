@@ -306,7 +306,7 @@ namespace VisaApp
             DoesNotApply(_survey.address.region, Address.fieldHomeState, Address.checkHomeStateNotApply);
             DoesNotApply(_survey.address.index, Address.fieldHomeZip, Address.checkHomeZipNotApply);
             Select(Address.selectHomeCountry, TranslateEn(_survey.address.country));
-            if (CheckBox((_survey.real_address != null), Address.checkMailAddressNo,Address.checkMailAddressYes))
+            if (CheckBox((_survey.real_address.city != null), Address.checkMailAddressNo,Address.checkMailAddressYes))
             {
                 FillLinesAddress(_survey.real_address.street, Address.fieldMailStreet, Address.fieldMailStreet2);
                 SendKeys(Address.fieldMailCity, _survey.real_address.city);
@@ -341,8 +341,10 @@ namespace VisaApp
             {
                 Select(By.Id($"ctl00_SiteContentPlaceHolder_FormView1_dtlSocial_ctl0{i}_ddlSocialMedia"),
                     _survey.public_links[i].linl_soc_web);
+                Thread.Sleep(1500);
                 SendKeysOriginal(By.Id($"ctl00_SiteContentPlaceHolder_FormView1_dtlSocial_ctl0{i}_tbxSocialMediaIdent"),
                     _survey.public_links[i].link_to_account);
+                Thread.Sleep(1500);
             }
 
             Click(Address.checkHaveAnotherSWNo);
@@ -401,7 +403,7 @@ namespace VisaApp
                 USContactInformation.fieldStreet2);
             SendKeys(USContactInformation.fieldCity, _survey.inviter.address.city);
             Select(USContactInformation.selectState, TranslateEn(_survey.inviter.address.region));
-            if (_survey.inviter.address.index != null)
+            if (_survey.inviter.address.index != null && _survey.inviter.address.index.Length==5)
             {
                 SendKeys(USContactInformation.fieldZip, _survey.inviter.address.index);
             }
